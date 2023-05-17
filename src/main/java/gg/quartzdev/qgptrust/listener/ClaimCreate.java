@@ -24,7 +24,6 @@ public class ClaimCreate implements Listener {
         PlayerData playerData;
 
 //        Makes sure player exists in GP Data
-//        Will also fail if GP hook fail
         try {
             playerData = gpDataStore.getPlayerData(player.getUniqueId());
         } catch(Exception e){
@@ -41,7 +40,7 @@ public class ClaimCreate implements Listener {
         ArrayList<String> containers = new ArrayList<>();
         ArrayList<String> accessors = new ArrayList<>();
         ArrayList<String> managers = new ArrayList<>();
-//        gets all trustees of previous claims
+//        gets all trustees of the last claim
         lastClaim.getPermissions(builders, containers, accessors, managers);
 
 //        adds each type of trustee to the new claim respectively
