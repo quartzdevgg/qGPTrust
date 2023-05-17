@@ -27,7 +27,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-        mvn -B package --file pom.xml
+        mvn test
         echo "git_hash=$git_hash" >> $GITHUB_ENV
         echo "snapshotVersion=1.0-beta3" >> $GITHUB_ENV
         echo "artifactPath=$(pwd)/builds" >> $GITHUB_ENV
