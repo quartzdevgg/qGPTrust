@@ -27,6 +27,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
+        cd qGPTrust
         mvn clean package
         echo "git_hash=$git_hash" >> $GITHUB_ENV
         echo "snapshotVersion=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
