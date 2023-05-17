@@ -26,8 +26,13 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+        mvn -B package --file pom.xml
+        echo "git_hash=$git_hash" >> $GITHUB_ENV
+        echo "snapshotVersion=1.0-beta3" >> $GITHUB_ENV
+        echo "artifactPath=$(pwd)/builds" >> $GITHUB_ENV
+        
     - uses: actions/upload-artifact@v3
       with:
-        name: Package
-        path: staging
+        name: qGPTrust-v${{ env.snapshotVersion }}-${{ env.git_hash }}.jar
+        path: ${{ env.artifactPath }}/qGPTrust-v${{ env.snapshotVersion }}.jar
