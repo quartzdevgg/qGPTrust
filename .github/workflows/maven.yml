@@ -30,7 +30,7 @@ jobs:
         mvn clean package
         echo "git_hash=$git_hash" >> $GITHUB_ENV
         echo "snapshotVersion=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
-        echo "artifactPath=$(pwd)/qGPTrust/target" >> $GITHUB_ENV
+        echo "artifactPath=$(pwd)/target" >> $GITHUB_ENV
         
     - uses: actions/upload-artifact@v3
       with:
