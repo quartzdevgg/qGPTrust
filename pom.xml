@@ -10,6 +10,8 @@
     <packaging>jar</packaging>
 
     <name>qGPTrust</name>
+<!--    /home/runner/work/qGPTrust/qGPTrust/target/qGPTrust-v1.0-beta3.jar-->
+<!--    -->
 
     <properties>
         <java.version>1.8</java.version>
@@ -58,6 +60,19 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
