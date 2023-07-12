@@ -2,7 +2,7 @@ name: qGPTrust
 version: '${project.version}'
 main: gg.quartzdev.qgptrust.qGPTrust
 prefix: qGPTrust
-api-version: 1.20
+api-version: 1.19
 depend: [GriefPrevention]
 authors: [QarthO]
 description: GriefPrevention add-on to trust a player to all current AND future claims.

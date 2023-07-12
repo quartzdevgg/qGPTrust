@@ -67,7 +67,7 @@ public class ClaimCreate implements Listener {
 
         MiniMessage mm = MiniMessage.miniMessage();
         String plural = (totalTrusteeCount > 1) ? "s" : "";
-        Component parse = mm.deserialize("   <gray>>> <green>Trusted <aqua>" + totalTrusteeCount + " <green>player" + plural + " to your new claim<newline>  <gray>>> <green>View with <red><click:suggest_command:/trustlist>/trustlist</click>");
+        Component parse = mm.deserialize("  <gray>>> <green>Trusted <aqua>" + totalTrusteeCount + " <green>player" + plural + " to your new claim<newline>  <gray>>> <green>View with <red><click:suggest_command:/trustlist>/trustlist</click>");
         player.sendMessage(parse);
         // Saves Claim to datastore making it effective
         gpDataStore.saveClaim(newClaim);
