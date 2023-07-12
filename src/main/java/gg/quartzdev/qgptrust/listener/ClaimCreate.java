@@ -1,6 +1,8 @@
 package gg.quartzdev.qgptrust.listener;
 
 import me.ryanhamshire.GriefPrevention.*;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -57,6 +59,9 @@ public class ClaimCreate implements Listener {
             newClaim.setPermission(manager, ClaimPermission.Manage);
         }
 
+        MiniMessage mm = MiniMessage.miniMessage();
+        Component parse = mm.deserialize("<red>[qGPTrust]</red> Trusted 4 players. View by using /trustlist inside the claim");
+        player.sendMessage(parse);
         // Saves Claim to datastore making it effective
         gpDataStore.saveClaim(newClaim);
 

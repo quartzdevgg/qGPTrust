@@ -46,6 +46,12 @@
             <version>16.18.1</version>
             <scope>provided</scope>
         </dependency>
+<!--        MiniMessage-->
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-minimessage</artifactId>
+            <version>4.14.0</version>
+        </dependency>
     </dependencies>
 
     <build>
