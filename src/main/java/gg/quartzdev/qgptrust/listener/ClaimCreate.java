@@ -45,6 +45,12 @@ public class ClaimCreate implements Listener {
 //        gets all trustees of the last claim
         lastClaim.getPermissions(builders, containers, accessors, managers);
 
+//        total number of trusted players from previous claim
+        int totalTrusteeCount = builders.size() + containers.size() + accessors.size() + managers.size();
+
+//        does nothing if no one to trust
+        if(totalTrusteeCount == 0) return;
+
 //        adds each type of trustee to the new claim respectively
         for(String builder : builders) {
             newClaim.setPermission(builder, ClaimPermission.Build);
@@ -61,7 +67,7 @@ public class ClaimCreate implements Listener {
 
         MiniMessage mm = MiniMessage.miniMessage();
         int totalTrusteeCount = builders.size() + containers.size() + accessors.size() + managers.size();
-        Component parse = mm.deserialize(" <gray>>> <green>Trusted <aqua>" + totalTrusteeCount + "<green>players to your new claim's <red><click:suggest_command:/trustlist>/trustlist</click>");
+        Component parse = mm.deserialize("    <gray>>> <green>Trusted <aqua>" + totalTrusteeCount + " <green>players to your new claim<newline>   <gray>>><green>View with <red><click:suggest_command:/trustlist>/trustlist</click>");
         player.sendMessage(parse);
         // Saves Claim to datastore making it effective
         gpDataStore.saveClaim(newClaim);
