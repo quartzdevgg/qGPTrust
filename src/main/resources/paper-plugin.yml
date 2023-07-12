@@ -1,5 +1,5 @@
-name: Paper-Test-Plugin
-version: '1.0'
+name: qGPTrust
+version: '${project.version}'
 main: gg.quartzdev.qgptrust.qGPTrust
 authors: [QarthO]
 website: https://quartzdev.gg/

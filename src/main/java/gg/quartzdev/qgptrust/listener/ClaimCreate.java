@@ -66,7 +66,6 @@ public class ClaimCreate implements Listener {
         }
 
         MiniMessage mm = MiniMessage.miniMessage();
-        int totalTrusteeCount = builders.size() + containers.size() + accessors.size() + managers.size();
         Component parse = mm.deserialize("    <gray>>> <green>Trusted <aqua>" + totalTrusteeCount + " <green>players to your new claim<newline>   <gray>>><green>View with <red><click:suggest_command:/trustlist>/trustlist</click>");
         player.sendMessage(parse);
         // Saves Claim to datastore making it effective
