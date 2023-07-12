@@ -60,7 +60,8 @@ public class ClaimCreate implements Listener {
         }
 
         MiniMessage mm = MiniMessage.miniMessage();
-        Component parse = mm.deserialize("<red>[qGPTrust]</red> Trusted 4 players. View by using /trustlist inside the claim");
+        int totalTrusteeCount = builders.size() + containers.size() + accessors.size() + managers.size();
+        Component parse = mm.deserialize(" <gray>>> <green>Trusted <aqua>" + totalTrusteeCount + "<green>players to your new claim's <red><click:suggest_command:/trustlist>/trustlist</click>");
         player.sendMessage(parse);
         // Saves Claim to datastore making it effective
         gpDataStore.saveClaim(newClaim);

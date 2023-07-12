@@ -1,0 +1,11 @@
+name: Paper-Test-Plugin
+version: '1.0'
+main: gg.quartzdev.qgptrust.qGPTrust
+authors: [QarthO]
+website: https://quartzdev.gg/
+description: GriefPrevention addon - new claims remember who you trusted
+api-version: '1.20'
+dependencies:
+  - name: GriefPrevention
+    required: true
+prefix: qGPTrust
