@@ -21,7 +21,6 @@ public class ClaimCreate implements Listener {
 
 //        Makes sure creator is a player
         if(!(owner  instanceof Player)) return;
-
         Player player = (Player) owner;
         PlayerData playerData;
 
