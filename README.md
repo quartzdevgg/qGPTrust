@@ -16,4 +16,12 @@ Just drop it in and it works!
 
 After creating a claim, the creator will be notified how many players were auto-trusted to their new claim to prevent any confusion.
 
-(<img alt="qGPTrust Notification Screenshot"src="https://cdn.modrinth.com/data/OJ5s3nwX/images/0812708c58932cfbb2deab5cf9a545824f60c8c3.png">
+<p align="center">
+<img alt="qGPTrust Notification Screenshot"src="https://cdn.modrinth.com/data/OJ5s3nwX/images/0812708c58932cfbb2deab5cf9a545824f60c8c3.png">
+</p>
+
+---
+
+This plugin uses [bStats](https://bstats.org/). You can opt-out in the bStats config
+<p align="center
+<a href="https://bstats.org/plugin/bukkit/qGPTrust/18477"><img alt="bStats qGPTrust" src="https://bstats.org/signatures/bukkit/qGPTrust.svg"></a>
