@@ -17,7 +17,7 @@ Just drop it in and it works!
 After creating a claim, the creator will be notified how many players were auto-trusted to their new claim to prevent any confusion.
 
 <p align="center">
-<img alt="qGPTrust Notification Screenshot"src="https://cdn.modrinth.com/data/OJ5s3nwX/images/0812708c58932cfbb2deab5cf9a545824f60c8c3.png">
+<img alt="qGPTrust Notification Screenshot"src="https://raw.githubusercontent.com/Quartz-Dev/qGPTrust/main/qgptrust%20message.png">
 </p>
 
 ---
