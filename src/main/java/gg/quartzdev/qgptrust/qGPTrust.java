@@ -3,7 +3,7 @@ package gg.quartzdev.qgptrust;
 import org.bukkit.plugin.java.JavaPlugin;
 import gg.quartzdev.qgptrust.metrics.Metrics;
 
-import gg.quartzdev.qgptrust.listener.ClaimCreate;
+import gg.quartzdev.qgptrust.listeners.ClaimCreate;
 public final class qGPTrust extends JavaPlugin {
 
     @Override

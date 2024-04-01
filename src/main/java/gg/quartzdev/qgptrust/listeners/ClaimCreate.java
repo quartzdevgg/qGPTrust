@@ -1,4 +1,4 @@
-package gg.quartzdev.qgptrust.listener;
+package gg.quartzdev.qgptrust.listeners;
 
 import me.ryanhamshire.GriefPrevention.*;
 import net.kyori.adventure.text.Component;
@@ -32,7 +32,7 @@ public class ClaimCreate implements Listener {
         }
 
 //        Gets the last claim they made before the current one
-        Claim lastClaim = playerData.lastClaim;
+        Claim lastClaim = playerData.getClaims().lastElement();
 //        If last claim is null, then no trustees need to be added
         if(lastClaim == null) return;
 
