@@ -1,15 +1,21 @@
 package gg.quartzdev.qgptrust.listeners;
 
-import me.ryanhamshire.GriefPrevention.*;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
+import java.util.ArrayList;
+import java.util.Vector;
+
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import me.ryanhamshire.GriefPrevention.events.ClaimCreatedEvent;
 
-import java.util.ArrayList;
+import me.ryanhamshire.GriefPrevention.Claim;
+import me.ryanhamshire.GriefPrevention.ClaimPermission;
+import me.ryanhamshire.GriefPrevention.DataStore;
+import me.ryanhamshire.GriefPrevention.GriefPrevention;
+import me.ryanhamshire.GriefPrevention.PlayerData;
+import me.ryanhamshire.GriefPrevention.events.ClaimCreatedEvent;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 
 public class ClaimCreate implements Listener {
 
@@ -32,7 +38,9 @@ public class ClaimCreate implements Listener {
         }
 
 //        Gets the last claim they made before the current one
-        Claim lastClaim = playerData.getClaims().lastElement();
+        Vector<Claim> claims = playerData.getClaims();
+        if(claims == null || claims.size() == 0) return;
+        Claim lastClaim = claims.lastElement();
 //        If last claim is null, then no trustees need to be added
         if(lastClaim == null) return;
 
