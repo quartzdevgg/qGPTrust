@@ -14,8 +14,6 @@ import me.ryanhamshire.GriefPrevention.DataStore;
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
 import me.ryanhamshire.GriefPrevention.PlayerData;
 import me.ryanhamshire.GriefPrevention.events.ClaimCreatedEvent;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 
 public class ClaimCreate implements Listener {
 
@@ -72,10 +70,8 @@ public class ClaimCreate implements Listener {
             newClaim.setPermission(manager, ClaimPermission.Manage);
         }
 
-        MiniMessage mm = MiniMessage.miniMessage();
         String plural = (totalTrusteeCount > 1) ? "s" : "";
-        Component parse = mm.deserialize("<click:run_command:/trustlist><hover:show_text:'<dark_purple>Runs: <red>/trustlist'> <light_purple>>> <green>Trusted <aqua>" + totalTrusteeCount + " <green>player" + plural + " to your new claim <gray>- <dark_aqua><u>Click for info</click>");
-        player.sendMessage(parse);
+        player.sendRichMessage("<click:run_command:/trustlist><hover:show_text:'<dark_purple>Runs: <red>/trustlist'> <light_purple>>> <green>Trusted <aqua>" + totalTrusteeCount + " <green>player" + plural + " to your new claim <gray>- <dark_aqua><u>Click for info</click>");
         // Saves Claim to datastore making it effective
         gpDataStore.saveClaim(newClaim);
 
